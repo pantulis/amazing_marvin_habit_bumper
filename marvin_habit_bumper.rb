@@ -5,7 +5,7 @@ class MarvinHabitBumper < Sinatra::Base
 
   set :default_content_type, :json
 
-  get '/habits/' do
+  get '/habits' do
     res = MarvinAPI::list_habits()
   end
   
