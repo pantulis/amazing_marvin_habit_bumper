@@ -2,6 +2,8 @@
 
 This is a minimal Sinatra App to interface with Amazing Marvin Habit API.
 
+**Important** - This is low level stuff.  Use at your own risk: any bug in the code or any unexpected changes in Amazing Marvin's internal data structures can destroy your data.  Always backup your data.
+
 ## Requirements
 
 The following environment variables need to be configured:
