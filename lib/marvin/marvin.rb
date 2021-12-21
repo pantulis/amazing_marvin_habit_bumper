@@ -3,13 +3,19 @@ require 'date'
 require './lib/marvin/api/http.rb'
 
 module MarvinAPI
-  
+
+
+  def MarvinAPI.list_habits
+    request_body = '{ "selector": { "db": "Habits" } }'
+    json = MarvinHTTPApi.new.post("_find", request_body)
+  end
+
   # habit is a str
   def MarvinAPI.get_habit(habit_id)
     request_body = '{ "selector": { "db": "Habits", "_id": { "$eq" : "' + habit_id + '" }}}'
     json = MarvinHTTPApi.new.post("_find", request_body)
   end
-  
+
   def MarvinAPI.bump_habit(habit_id)
 
     request_body = '{ "selector": { "db": "Habits", "_id": { "$eq" : "' + habit_id + '" }}}'
