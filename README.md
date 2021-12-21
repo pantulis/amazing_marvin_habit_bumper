@@ -22,6 +22,11 @@ They can be easily obtained from Amazing Marvin's settings page.  You do not nee
 ### GET /habits
 
 Returns a JSON file including all the habits present in Marvin's Cloudant database.   This includes the name of the Habit and its internal id.
+You can parse this file with a tool like jq:
+
+```
+curl https://<your-server.com>/habits | jq '.docs[] | [._id, .title]'
+````
 
 ### GET /habits/<habit_id>
 
